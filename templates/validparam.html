@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="static/styles.css">
+    {% include 'header.html' %}
+    <title>404 - Page Not Found</title>
+    <style>
+        p {
+            text-align: center;
+        }
+        .error-button{
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="blurb-container"></div>
+    <h1>Oops!</h1>
+        <p>Please enter valid parameters!</p>
+        <div class = "error-button">
+            {% if redirect == 'all_recipes' %}
+            <form action="/all_recipes" method="get">
+            {% elif redirect == 'recommended' %}
+            <form action="/recommended_recipes" method="get">
+            {% endif %}
+                <button class="submit-button" name="clear" value="True" style="margin: 0 0 0 20px;">Go back to the search page</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
